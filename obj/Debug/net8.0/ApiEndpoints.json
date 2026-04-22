@@ -1,0 +1,162 @@
+[
+  {
+    "ContainingType": "footic.Controllers.LeagueStandingsController",
+    "Method": "GetHighst",
+    "RelativePath": "api/LeagueStandings/heighst",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.LeagueStandingsController",
+    "Method": "Getleader",
+    "RelativePath": "api/LeagueStandings/leader",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.LeagueStandingsController",
+    "Method": "progress",
+    "RelativePath": "api/LeagueStandings/progress",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.LeagueStandingsController",
+    "Method": "GetStandings",
+    "RelativePath": "api/LeagueStandings/standings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.MatchController",
+    "Method": "GetById",
+    "RelativePath": "api/Match/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "footic.DTOs.Match.MatchDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "footic.Controllers.MatchController",
+    "Method": "GetAll",
+    "RelativePath": "api/Match/all matches",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[footic.DTOs.Match.MatchDTO, footic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "footic.Controllers.MatchController",
+    "Method": "ConfirmSave",
+    "RelativePath": "api/Match/confirm-save",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matchesDto",
+        "Type": "System.Collections.Generic.List\u00601[[footic.DTOs.Match.displayMatchDto, footic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.MatchController",
+    "Method": "PreviewSchedule",
+    "RelativePath": "api/Match/preview-schedule",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.PlayerController",
+    "Method": "GetPlayer",
+    "RelativePath": "api/Player/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.PlayerController",
+    "Method": "GetByTeam",
+    "RelativePath": "api/Player/team/{teamId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teamId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "footic.Controllers.TeamsController",
+    "Method": "GetTeamDetails",
+    "RelativePath": "api/Teams/{id}/details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

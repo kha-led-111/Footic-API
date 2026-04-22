@@ -1,0 +1,372 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "footic",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/LeagueStandings/standings": {
+      "get": {
+        "tags": [
+          "LeagueStandings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LeagueStandings/heighst": {
+      "get": {
+        "tags": [
+          "LeagueStandings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LeagueStandings/leader": {
+      "get": {
+        "tags": [
+          "LeagueStandings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LeagueStandings/progress": {
+      "get": {
+        "tags": [
+          "LeagueStandings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Match/all matches": {
+      "get": {
+        "tags": [
+          "Match"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatchDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatchDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MatchDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Match/{id}": {
+      "get": {
+        "tags": [
+          "Match"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Match/preview-schedule": {
+      "get": {
+        "tags": [
+          "Match"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Match/confirm-save": {
+      "post": {
+        "tags": [
+          "Match"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/displayMatchDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/displayMatchDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/displayMatchDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Player/team/{teamId}": {
+      "get": {
+        "tags": [
+          "Player"
+        ],
+        "parameters": [
+          {
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Player/{id}": {
+      "get": {
+        "tags": [
+          "Player"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Teams/{id}/details": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MatchDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "homeTeamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "awayTeamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "homeTeamScore": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "awayTeamScore": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "matchState": {
+            "$ref": "#/components/schemas/MatchState"
+          },
+          "matchdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matchtime": {
+            "type": "string",
+            "format": "time"
+          },
+          "stadiumID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "week": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MatchState": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "displayMatchDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "homeTeamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "awayTeamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "homeTeamScore": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "awayTeamScore": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "matchState": {
+            "$ref": "#/components/schemas/MatchState"
+          },
+          "matchdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matchtime": {
+            "type": "string",
+            "format": "time"
+          },
+          "stadiumID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "week": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hometeamname": {
+            "type": "string",
+            "nullable": true
+          },
+          "awayteamname": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

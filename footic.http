@@ -1,0 +1,6 @@
+@footic_HostAddress = http://localhost:5025
+
+GET {{footic_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
